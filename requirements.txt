@@ -1,3 +1,4 @@
 TgCrypto
 pyrofork==2.2.10
 pyromod==1.5
+Flask==3.0.0
