@@ -13,8 +13,7 @@ bot = Client(
     "InstaLoader",          # Name of the session
     bot_token=BOT_TOKEN,    # Bot token
     api_id=API_ID,          # API ID
-    api_hash=API_HASH,      # API Hash
-    plugins=dict(root='public')  # Folder for plugins (if any)
+    api_hash=API_HASH       # API Hash
 )
 
 # Run the bot
