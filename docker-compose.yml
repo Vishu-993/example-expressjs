@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: node-telegram-bot
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}  # Replace with your bot token or set it in a .env file
+      - PORT=8080
+    ports:
+      - "8080:8080"  # Expose port 8080 to the host machine
+    volumes:
+      - .:/app  # Mount current directory to /app in the container (optional for live dev)
+    restart: always  # Restart the container if it crashes
+
+  # You can also add a database service if your app needs one in the future
+  # db:
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_DB: bot_db
+  #   volumes:
+  #     - db_data:/var/lib/postgresql/data
+  #   restart: always
+
+# Optional: Define a volume for persistent data storage (e.g., database)
+# volumes:
+#   db_data:
